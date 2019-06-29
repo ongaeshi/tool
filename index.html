@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Ruby on Browser</title>
+</head>
+<body>
+  <h1>Ruby on Browser</h1>
+  <ol>
+      <li>Descripction</li>
+  </ol>
+  <div id="app" class="container">
+    <textarea v-model="message" rows="16" cols="80" wrap="off"></textarea>
+    <pre>{{ replace(message) }}</pre>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
