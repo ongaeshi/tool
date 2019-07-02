@@ -7,12 +7,26 @@
   <script src="https://cdn.opalrb.com/opal/current/opal.js" onload="Opal.load('opal')"></script>
   <script src="https://cdn.opalrb.com/opal/current/opal-parser.js" onload="Opal.load('opal-parser')"></script>
   <script type="text/ruby" src="main.rb"></script>
+  <script>
+    (function() {
+        var prev = "";
+        setInterval(() => {
+            var text = inputArea.value;
+            if (prev != text) {
+                prev = text;
+                outputArea.value = Opal.Kernel.$main(text);
+            }
+        }, 100);
+    })()
+    </script>
 </head>
 <body>
   <h1>Ruby on Browser</h1>
   <div id="app" class="container">
-    <textarea v-model="message" rows="10" cols="80"></textarea>
-    <textarea rows="10" cols="80">{{ replace(message) }}</textarea>
+    <!-- <textarea v-model="message" rows="10" cols="80"></textarea> -->
+    <!-- <textarea rows="10" cols="80">{{ replace(message) }}</textarea> -->
+    <textarea id="inputArea" v-model="message" rows="10" cols="80"></textarea>
+    <textarea id="outputArea" rows="10" cols="80"></textarea>
   </div>
   <h2>Descripction</h2>
   <ol>
