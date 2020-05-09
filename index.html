@@ -1,47 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="utf-8">
-  <title>変数名を色々な形式に変換</title>
-  <link href="main.css" rel="stylesheet">
-  <script src="https://cdn.opalrb.com/opal/current/opal.js" onload="Opal.load('opal')"></script>
-  <script src="https://cdn.opalrb.com/opal/current/opal-parser.js" onload="Opal.load('opal-parser')"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ツール置き場</title>
   <script type="text/ruby" src="main.rb"></script>
-  <script>
-    (function () {
-      var prev = "";
-      setInterval(() => {
-        var text = inputArea.value;
-        if (prev != text) {
-          prev = text;
-          outputArea.value = Opal.Kernel.$main(text);
-        }
-      }, 100);
-    })()
-  </script>
 </head>
-
 <body>
-  <h1>変数名を色々な形式に変換</h1>
-  <div id="app" class="container">
-    <textarea id="inputArea" v-model="message" rows="10" cols="80" placeholder="fooBarBaz"></textarea>
-    <textarea id="outputArea" rows="10" cols="80"></textarea>
-  </div>
-  <h2>使い方</h2>
-  <ol>
-    <li>foo barやfooBarなど好きな形式で入力</li>
-    <li>様々な形式で出力されるので使いたいものをコピーして使ってください</li>
-    <ul>
-      <li>スペース区切り</li>
-      <li>ケバブケース(ハイフン区切り)</li>
-      <li>スネークケース(アンダーバー区切り)</li>
-      <li>キャメルケース(先頭小文字)</li>
-      <li>パスカルケース(先頭大文字)</li>
-      <li>ケバブケース(全て大文字)</li>
-      <li>スネークケース(全て大文字)</li>
-    </ul>
-  </ol>
+  <h1>ツール置き場</h1>
+  <ul>
+    <li><a href="./caseninja.html">変数名を色々な形式に変換</a></li>
+  </ul>
 </body>
-
 </html>
