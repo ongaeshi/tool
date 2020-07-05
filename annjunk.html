@@ -18,6 +18,10 @@
   <ul id="junk"></ul>
   <h2>ANN0</h2>
   <ul id="ann0"></ul>
+  <h2>TBS 09:30</h2>
+  <ul id="tbs0930"></ul>
+  <h2>TBS 00:00</h2>
+  <ul id="tbs0000"></ul>
 </body>
 
 <script type="text/javascript">
@@ -57,6 +61,22 @@
       ul.appendChild(radiko_a("水溜りボンド", "LFR", 4, 3, 0));
       ul.appendChild(radiko_a("霜降り明星", "LFR", 5, 3, 0));
       ul.appendChild(radiko_a("週替わり", "LFR", 6, 3, 0));
+    }
+    {
+      const ul = document.getElementById("tbs0930");
+      ul.appendChild(radiko_a("かまいたちのヘイ！タクシー！", "TBS", 0, 21, 30));
+      ul.appendChild(radiko_a("篠田麻里子のGOOD LIFE LAB！", "TBS", 1, 21, 30));
+      ul.appendChild(radiko_a("イモトアヤコのすっぴんしゃん", "TBS", 2, 21, 30));
+      ul.appendChild(radiko_a("相羽あいなの大こ～かいRaDiO", "TBS", 3, 21, 30));
+      ul.appendChild(radiko_a("問わず語りの神田伯山", "TBS", 4, 21, 30));
+    }
+    {
+      const ul = document.getElementById("tbs0000");
+      ul.appendChild(radiko_a("東京ポッド許可局", "TBS", 1, 0, 0));
+      ul.appendChild(radiko_a("アルコ＆ピース D.C.GARAGE", "TBS", 2, 0, 0));
+      ul.appendChild(radiko_a("うしろシティ 星のギガボディ", "TBS", 3, 0, 0));
+      ul.appendChild(radiko_a("ハライチのターン！", "TBS", 4, 0, 0));
+      ul.appendChild(radiko_a("マイナビ Laughter Night", "TBS", 5, 0, 0));
     }
   })()
 </script>
