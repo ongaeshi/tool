@@ -4,39 +4,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>最新のANNとJUNKを聞く</title>
+  <title>ANN JUNK</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="main.css" rel="stylesheet">
   <script src="https://cdn.opalrb.com/opal/current/opal.js" onload="Opal.load('opal')"></script>
   <script type="text/javascript" src="annjunk.js"></script>
 </head>
 
 <body>
-  <h1>最新のANNとJUNKを聞く</h1>
-  <h2>ANN</h2>
-  <ul id="ann"></ul>
-  <h2>JUNK</h2>
-  <ul id="junk"></ul>
-  <h2>ANN0</h2>
-  <ul id="ann0"></ul>
-  <h2>TBS 09:30</h2>
-  <ul id="tbs0930"></ul>
-  <h2>TBS 00:00</h2>
-  <ul id="tbs0000"></ul>
+  <div class="container">
+    <h1>ANN JUNK</h1>
+    <h2>ANN</h2>
+    <ul id="ann"></ul>
+    <h2>JUNK</h2>
+    <ul id="junk"></ul>
+    <h2>ANN0</h2>
+    <ul id="ann0"></ul>
+    <h2>TBS 09:30</h2>
+    <ul id="tbs0930"></ul>
+    <h2>TBS 00:00</h2>
+    <ul id="tbs0000"></ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 </body>
 
 <script type="text/javascript">
   function radiko_a(title, channel, wday, hour, min) {
     const li = document.createElement("li");
+    li.className = "list-group-item";
+
     const a = document.createElement("a");
     a.href = Opal.Radiko.$radiko_url(title, channel, wday, hour, min);
     a.textContent = title;
     li.appendChild(a);
+
     return li;
   }
 
   (function () {
     {
       const ul = document.getElementById("ann");
+      ul.className = "list-group list-group-horizontal";
       ul.appendChild(radiko_a("菅田将暉", "LFR", 1, 1, 0));
       ul.appendChild(radiko_a("星野源", "LFR", 2, 1, 0));
       ul.appendChild(radiko_a("乃木坂46", "LFR", 3, 1, 0));
@@ -46,6 +64,7 @@
     }
     {
       const ul = document.getElementById("junk");
+      ul.className = "list-group list-group-horizontal";
       ul.appendChild(radiko_a("伊集院光・深夜の馬鹿力", "TBS", 1, 1, 0));
       ul.appendChild(radiko_a("爆笑問題カーボーイ", "TBS", 2, 1, 0));
       ul.appendChild(radiko_a("山里亮太の不毛な議論", "TBS", 3, 1, 0));
@@ -55,6 +74,7 @@
     }
     {
       const ul = document.getElementById("ann0");
+      ul.className = "list-group list-group-horizontal";
       ul.appendChild(radiko_a("ファーストサマーウイカ", "LFR", 1, 3, 0));
       ul.appendChild(radiko_a("Creepy Nuts", "LFR", 2, 3, 0));
       ul.appendChild(radiko_a("佐久間宣行", "LFR", 3, 3, 0));
@@ -64,6 +84,7 @@
     }
     {
       const ul = document.getElementById("tbs0930");
+      ul.className = "list-group list-group-horizontal";
       ul.appendChild(radiko_a("かまいたちのヘイ！タクシー！", "TBS", 0, 21, 30));
       ul.appendChild(radiko_a("篠田麻里子のGOOD LIFE LAB！", "TBS", 1, 21, 30));
       ul.appendChild(radiko_a("イモトアヤコのすっぴんしゃん", "TBS", 2, 21, 30));
@@ -72,6 +93,7 @@
     }
     {
       const ul = document.getElementById("tbs0000");
+      ul.className = "list-group list-group-horizontal";
       ul.appendChild(radiko_a("東京ポッド許可局", "TBS", 1, 0, 0));
       ul.appendChild(radiko_a("アルコ＆ピース D.C.GARAGE", "TBS", 2, 0, 0));
       ul.appendChild(radiko_a("うしろシティ 星のギガボディ", "TBS", 3, 0, 0));
