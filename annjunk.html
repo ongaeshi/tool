@@ -11,8 +11,11 @@
 </head>
 
 <body>
-  <h2 id="ann">ANN</h2>
-  <h2 id="junk">JUNK</h2>
+  <h1>最新のANNとJUNKを聞く</h1>
+  <h2>ANN</h2>
+  <ul id="ann"></ul>
+  <h2>JUNK</h2>
+  <ul id="junk"></ul>
 </body>
 
 <script type="text/javascript">
@@ -27,9 +30,7 @@
 
   (function () {
     {
-      const ann = document.getElementById("ann");
-      const ul = document.createElement("ul");
-      ann.appendChild(ul);
+      const ul = document.getElementById("ann");
       ul.appendChild(radiko_a("菅田将暉", "LFR", 1, 1, 0));
       ul.appendChild(radiko_a("星野源", "LFR", 2, 1, 0));
       ul.appendChild(radiko_a("乃木坂46", "LFR", 3, 1, 0));
@@ -38,9 +39,7 @@
       ul.appendChild(radiko_a("オードリー", "LFR", 6, 1, 0));
     }
     {
-      const junk = document.getElementById("junk");
-      const ul = document.createElement("ul");
-      junk.appendChild(ul);
+      const ul = document.getElementById("junk");
       ul.appendChild(radiko_a("伊集院光・深夜の馬鹿力", "TBS", 1, 1, 0));
       ul.appendChild(radiko_a("爆笑問題カーボーイ", "TBS", 2, 1, 0));
       ul.appendChild(radiko_a("山里亮太の不毛な議論", "TBS", 3, 1, 0));
