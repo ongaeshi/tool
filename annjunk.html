@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>最新のANNとJUNKを聞く</title>
+  <link href="main.css" rel="stylesheet">
+  <script src="https://cdn.opalrb.com/opal/current/opal.js" onload="Opal.load('opal')"></script>
+  <script type="text/javascript" src="annjunk.js"></script>
+</head>
+
+<body>
+  <h2 id="ann">ANN</h2>
+  <h2 id="junk">JUNK</h2>
+</body>
+
+<script type="text/javascript">
+  function radiko_a(title, channel, wday, hour, min) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = Opal.Radiko.$radiko_url(title, channel, wday, hour, min);
+    a.textContent = title;
+    li.appendChild(a);
+    return li;
+  }
+
+  (function () {
+    {
+      const ann = document.getElementById("ann");
+      const ul = document.createElement("ul");
+      ann.appendChild(ul);
+      ul.appendChild(radiko_a("菅田将暉", "LFR", 1, 1, 0));
+      ul.appendChild(radiko_a("星野源", "LFR", 2, 1, 0));
+      ul.appendChild(radiko_a("乃木坂46", "LFR", 3, 1, 0));
+      ul.appendChild(radiko_a("ナインティナイン", "LFR", 4, 1, 0));
+      ul.appendChild(radiko_a("三四郎", "LFR", 5, 1, 0));
+      ul.appendChild(radiko_a("オードリー", "LFR", 6, 1, 0));
+    }
+    {
+      const junk = document.getElementById("junk");
+      const ul = document.createElement("ul");
+      junk.appendChild(ul);
+      ul.appendChild(radiko_a("伊集院光・深夜の馬鹿力", "TBS", 1, 1, 0));
+      ul.appendChild(radiko_a("爆笑問題カーボーイ", "TBS", 2, 1, 0));
+      ul.appendChild(radiko_a("山里亮太の不毛な議論", "TBS", 3, 1, 0));
+      ul.appendChild(radiko_a("おぎやはぎのメガネびいき", "TBS", 4, 1, 0));
+      ul.appendChild(radiko_a("バナナマンのバナナムーンGOLD", "TBS", 5, 1, 0));
+      ul.appendChild(radiko_a("エレ片のコント太郎", "TBS", 6, 1, 0));
+    }
+  })()
+</script>
+
+</html>
